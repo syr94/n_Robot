@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://kit.fontawesome.com/f6f7d7fb1d.js" crossorigin="anonymous"></script>
+	<title>Настольный робот</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+	<link rel="stylesheet" href="{% static 'css/main.css'%}" type="text/css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body style="background: linear-gradient(to top, silver, white);">
+	<div class = "jumbotron jumbotron-fluid" style = "display:flex; background: linear-gradient(to top, white, #4512AE);">
+		<div class="container">
+			<h1> {% include "mainApp/includes/some_html.html" %}</h1>
+			<p>
+				<a href = "/" class="btn btn-success btn-lg">Главная страница</a>
+				<a href = "/contact" class="btn btn-info btn-lg">О нас</a>
+			</p>
+			<div class = "btn-group btn-group-sm" role="group" aria-label="Basic example">
+				<a href = "#" class="btn btn-secondary"><i class = "fas fa-caret-right"></i>vk.com</a>
+				<a href = "https://www.youtube.com/channel/UCYs4Pw-p53ZyLN9agE6vodg?view_as=subscriber" target ="_blank" class="btn btn-secondary"><i class = "fas fa-caret-right"></i>Youtube</a>
+				<a href="#" class="btn btn-secondary"><i class = "fas fa-caret-right"></i>Facebook</a>
+				<a href="#" class="btn btn-secondary"><i class = "fas fa-caret-right"></i>Instagramm</a>
+			</div>
+		</div>
+		<div class="container" style="display: flex;">
+			<img class="logo" src = "{% static 'img/mainApp/logo.gif' %}" alt = "logo" >
+			<div class = 'face'>
+				<div class = "eyes">
+					<div class = 'eye'>
+					</div>
+					<div class = 'eye'>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<div class="container-fluid" style = "padding-right: : 20%; padding-left: : 20%;">
+		{% block content %}
+		{% endblock %}
+	</div>
+	<div class ="container-fluid" style="background-color: silver;">
+		<hr>
+		&copy; All rights are reserved 2020
+	</div>
+<script type="text/javascript">
+	document.querySelector('body').addEventListener('mousemove',eyeball);
+	function eyeball(){
+		var eye = document.querySelectorAll('.eye');
+		eye.forEach(function(eye){
+			let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
+			let y = (eye.getBoundingClientRect().top) + (eye.clientHeight/2);
+			let radian = Math.atan2(event.pageX - x, event.pageY - y);
+			let rot = (radian * (180/Math.PI) * -1) + 270;
+			eye.style.transform = "rotate("+ rot + "deg)";
+		})
+	}
+</script>
+</body>
+</html>

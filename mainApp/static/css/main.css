@@ -1,0 +1,51 @@
+.btn btn-success btn-lg{
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.4) inset;	
+	color: #fff;
+}
+
+.logo{
+	position: center;
+	width: auto;
+	height: auto;
+	max-height: 100px;
+}
+
+.face{
+	position: relative;
+	width: 150px;
+	height: 150px;
+	background: url('../img/mainApp/1234.png') no-repeat;	
+	padding-left: 20%;
+	margin-left: 40%; 
+}
+.eyes{
+	position: relative;
+	top: 28px;
+	display: flex;
+	width: 100px;
+	left: -87px;
+}
+
+.eye{
+	position: relative;
+	width: 20px;
+	height: 20px;
+	display: block;
+	background: #fff;
+	margin: 0 2px;
+	border-radius: 50%;
+
+}
+
+.eyes .eye::before
+{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 6px;
+	transform: translate(-50%,-50%);
+	width: 10px;
+	height: 10px;
+	background: #333;
+	border-radius: 50%;
+}

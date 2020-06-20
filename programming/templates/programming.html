@@ -1,0 +1,30 @@
+{%extends "mainApp/wrapper.html"%}
+{% load static %}
+{% block content %}
+<div id="carousel_programming" class="carousel slide" data-ride="carousel" style="padding-left: 25%; padding-right: 25%;">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="{% static 'img/programming/programming_1.jpg' %}" class="d-block w-100" alt="programming_1">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/programming/programming_2.jpg' %}" class="d-block w-100" alt="programming_2">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/programming/programming_3.jpg' %}" class="d-block w-100" alt="programming_3">
+    </div>
+  </div>
+</div>
+<div class='container-fluid'>
+	<p></p>
+	<p style="font-size: 20px; font-weight: 500; font-color: black; ">Если ты не знаешь как начать осваивать программирование, у меня есть для тебя новость, мы знаем как тебе стартануть в мир программирования</p>
+	<a  class="btn btn-primary" target = "_blank" href="https://www.youtube.com/playlist?list=PL1J_YW4nT6tjLPBJA_PGhPyTEGbGV22gv" style="color: white; font-weight: 700; font-size: 30px;"> Смотреть на YouTube</a>
+</div>
+
+<script>
+	$(function () {
+		$('#carousel_programming').carousel({
+  		interval: 10000
+		});
+	});
+</script>
+{% endblock %}

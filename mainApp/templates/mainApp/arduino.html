@@ -1,0 +1,11 @@
+{%extends "mainApp/wrapper.html"%}
+
+{% block content %}
+{% for val in values %}
+	{% if val == "HEllo" %}
+		<p>{{val}}</p>
+		<h3>{{val}}</h3>
+	{% endif %}
+	<p>{{val}}</p>
+{% endfor %}
+{% endblock %}
